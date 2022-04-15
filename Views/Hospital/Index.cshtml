@@ -1,0 +1,52 @@
+﻿@model List<HospitalfinderApp.Models.Hospital>
+
+@{
+    ViewData["Title"] = "Hospital List";
+}
+
+<h1>Hospital</h1>
+
+<p>
+    <a asp-action="View">View Hospital List</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Location
+            </th>
+
+            <th>
+                Waiting List
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    @*@foreach (var hospitals in )
+    {*@
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.Lat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WaitingList)
+            </td>
+        </tr>
+    @*}*@
+}
+    </tbody>
+</table>
